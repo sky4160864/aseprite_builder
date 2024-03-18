@@ -59,6 +59,8 @@ jobs:
   build-aseprite:
     name: Build Aseprite
     needs: check-version
+    permissions:
+      contents: write
     if: ${{ needs.check-version.outputs.should_build }}
     runs-on: ${{ matrix.os }}
     strategy:
